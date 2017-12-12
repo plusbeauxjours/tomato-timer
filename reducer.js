@@ -20,7 +20,7 @@ function restartTimer(){
     }
 }
 
-function addScond() {
+function addSecond() {
     return {
         type: ADD_SECOND
     }
@@ -31,12 +31,12 @@ function addScond() {
 const TIMER_DURATION = 1500;
 
 const initialState = {
-    isPlaying: false;
+    isPlaying: false,
     elapsedTime: 0,
     timerDuration: TIMER_DURATION 
 }
 
-function reducer(state = intialState, action){
+function reducer(state = initialState, action){
     switch(action.type){
         case START_TIMER:
             return applyStartTimer(state, action);
@@ -44,6 +44,8 @@ function reducer(state = intialState, action){
             return applyRestartTimer(state, action);
         case ADD_SECOND:
             return applyAddSecond(state);
+        default:
+            return state;
     }
 }
 
@@ -73,7 +75,7 @@ function applyAddSecond(state) {
     } else {
         return {
             ...state,
-            isPlaying:
+            isPlaying: false
         }
     }
 }
