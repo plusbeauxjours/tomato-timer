@@ -60,8 +60,8 @@ function applyStartTimer(state){
 
 function applyRestartTimer(state){
     return {
-        ...staet,
-        isPlaying: true,
+        ...state,
+        isPlaying: false,
         elapsedTime: 0,
     }
 }
@@ -86,6 +86,8 @@ const actionCreators = {
     restartTimer,
     addSecond
 }
+
+export { actionCreators };
 
 // Export Reducer
 
