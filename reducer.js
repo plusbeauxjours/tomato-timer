@@ -26,7 +26,7 @@ function addSecond() {
     }
 }
 
-// Reducer
+// initialState
 
 const TIMER_DURATION = 1500;
 
@@ -35,6 +35,8 @@ const initialState = {
     elapsedTime: 0,
     timerDuration: TIMER_DURATION 
 }
+
+// Reducer
 
 function reducer(state = initialState, action){
     switch(action.type){
@@ -49,11 +51,11 @@ function reducer(state = initialState, action){
     }
 }
 
-// Reducer Functions
+// Reducer Functions(transformation)
 
 function applyStartTimer(state){
     return {
-        ...state, 
+        ...state,  
         isPlaying: true,
     }
 }
@@ -79,6 +81,7 @@ function applyAddSecond(state) {
         }
     }
 }
+
 // Export Action Creators
 
 const actionCreators = {
